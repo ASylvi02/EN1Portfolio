@@ -68,7 +68,7 @@ file tells GitHub Pages to serve it as-is.
 ### 4. Confirm your site is live
 
 Visit the URL from step 3. Right now it'll still show the template's
-placeholder content — `FIRSTNAME LASTNAME`, a generic hero image, and so on.
+placeholder content — `Aubrey Sylvia`, a generic hero image, and so on.
 That's expected. The point of this step is just to confirm the plumbing
 works: the page loads, images show up, and the activity/project cards link
 to their pages. You'll open your editor and personalize the actual content
@@ -98,13 +98,13 @@ Now make it yours. Don't scroll through the HTML hunting for placeholder
 text by hand — ask your AI assistant (GitHub Copilot Chat, in the Codespace's
 left sidebar) to make the changes for you. For example:
 
-> Replace every "FIRSTNAME LASTNAME" placeholder in this site with my name,
+> Replace every "Aubrey Sylvia" placeholder in this site with my name,
 > "Jane Smith." Update the LinkedIn and GitHub links in index.html's social
 > box to my profiles: <your LinkedIn URL> and <your GitHub URL>.
 
 Things to personalize:
 
-- [ ] Your name, replacing `FIRSTNAME LASTNAME` everywhere it appears.
+- [ ] Your name, replacing `Aubrey Sylvia` everywhere it appears.
 - [ ] Your own header/banner image, replacing `images/header.jpg`.
 - [ ] Your LinkedIn and GitHub links in `index.html`'s social box.
 - [ ] Confirm you have the rights to publish any images you use — swap out
