@@ -1,9 +1,42 @@
 @import url("./theme.css");
 
+html {
+    scroll-behavior: smooth;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-border-strong);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    padding: 0.75rem 1rem;
+    background: var(--color-accent);
+    color: var(--color-text-on-dark);
+    border: 1px solid var(--color-border-strong);
+    border-radius: calc(var(--radius) - 4px);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-200%);
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 body {
-    background-color: var(--color-bg-page);
+    background-color: var(--color-bg-dark);
     font-family: var(--font-body);
-    margin: 20px;
+    margin: 0;
+}
+
+::selection {
+    background: var(--color-accent);
+    color: var(--color-text-on-dark);
 }
 
 /* **************************** */
@@ -15,15 +48,17 @@ body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 75%;
+    width: min(75%, var(--container-max));
     max-width: var(--container-max);
-    background: rgba(250, 250, 250, 0.9);
+    background: var(--color-bg-dark);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-panel);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
-    color: var(--color-primary);
+    padding: 10px 14px;
+    color: var(--color-text-on-dark);
     border-radius: var(--radius);
 }
 
@@ -39,9 +74,34 @@ body {
 }
 
 .header .navbar a {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--color-text-on-dark);
     padding: 10px;
+    font-weight: 700;
+    border-radius: calc(var(--radius) - 4px);
+    transition: background-color 180ms ease, color 180ms ease;
+}
+
+.header .navbar a:hover,
+.header .navbar a:focus-visible {
+    background-color: var(--color-accent);
+    color: var(--color-text-on-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
 
 /* *********************************** */
@@ -49,37 +109,81 @@ body {
 /* *********************************** */
 
 .proj-container {
+    position: relative;
     max-width: var(--container-max);
+    width: min(var(--container-max), calc(100% - 2rem));
     margin: auto;
-    margin-top: 90px;
-    background: var(--color-bg-card);
-    padding: 20px;
+    margin-top: 112px;
+    margin-bottom: 3rem;
+    background: linear-gradient(145deg, var(--color-pattern-dark), var(--color-accent-dark));
+    padding: 32px;
     border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-panel);
+}
+
+.proj-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 32px;
+    left: 32px;
+    height: 3px;
+    background: var(--color-border-strong);
+    border-radius: 0 0 999px 999px;
 }
 
 .proj-header {
     text-align: center;
-    color: var(--color-primary);
+    color: var(--color-text-on-dark);
+    margin-top: 12px;
+}
+
+.proj-container > .proj-header:first-child {
+    margin: 0;
+    color: var(--color-border-strong);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.proj-container > h2.proj-header {
+    margin: 24px 0 0;
+    font-size: 2rem;
 }
 
 .proj-img-container {
     text-align: center;
     margin: 20px 0;
+    overflow: hidden;
+    border-radius: var(--radius);
 }
 
 .proj-img-container img {
     max-width: 100%;
     height: auto;
     border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition: transform 220ms ease, filter 220ms ease;
+}
+
+.proj-img-container img:hover {
+    transform: scale(1.015);
+    filter: brightness(1.06) saturate(1.05);
 }
 
 .proj-desc {
-    margin: 20px 0;
-    line-height: 1.6;
+    margin: 28px 0 0;
+    padding: 18px 20px;
+    background: rgba(0, 0, 0, 0.24);
+    border-left: 3px solid var(--color-border-strong);
+    border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .proj-desc p {
-    color: var(--color-text);
+    margin: 0;
+    color: var(--color-text-on-dark);
+    line-height: 1.7;
 }
 
 /* Optional block: a labeled code sample. Delete this block on pages   */
@@ -94,6 +198,14 @@ body {
     color: white;
     border-radius: 8px;
     padding: 4px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.proj-code pre:focus-within {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 12px 30px rgba(200, 160, 220, 0.3);
 }
 pre code, pre code {
     white-space: pre-wrap;
@@ -114,6 +226,14 @@ pre code, pre code {
     height: 150px;
     object-fit: cover;
     border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.proj-gallery img:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08) saturate(1.05);
 }
 
 /* Optional block: an embedded video (e.g. YouTube). The padding-top  */
@@ -126,6 +246,12 @@ pre code, pre code {
     margin: 20px 0;
     border-radius: var(--radius);
     overflow: hidden;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.proj-video-container:focus-within {
+    border-color: var(--color-border-strong);
 }
 
 .proj-video-container iframe {
@@ -158,11 +284,20 @@ pre code, pre code {
 
     .proj-container {
         margin-top: 80px;
-        padding: 14px;
+        padding: 24px 14px;
     }
 
     .proj-header {
         font-size: 1.3em;
+    }
+
+    .proj-container > h2.proj-header {
+        font-size: 1.6rem;
+    }
+
+    .proj-container::before {
+        right: 14px;
+        left: 14px;
     }
 
     .proj-gallery img {

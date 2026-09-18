@@ -6,6 +6,8 @@
 </head>
 <body>
 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     <!-- This file is a STARTING POINT, not a real page. -->
     <!-- To add a new activity or project: copy this file, rename it -->
     <!-- (e.g. project04.html), fill in the content below, then add a -->
@@ -14,18 +16,18 @@
 
     <!-- Header and Navigation Section -->
     <header class="header">
-        <nav class="navbar">
-            <a href="./index.html" class="active">Home</a>
+        <nav class="navbar" aria-label="Project navigation">
+            <a href="./index.html" class="back-link">&larr; Back to Portfolio</a>
         </nav>
     </header>
 
     <!-- Project Information -->
-    <div class="proj-container">
+    <div class="proj-container" id="main-content" tabindex="-1">
 
         <h1 class='proj-header'>Project Portfolio</h1>
 
         <div class="proj-img-container">
-            <img src="./images/header.jpg">
+            <img src="./images/header.jpg" alt="Replace with this page's hero image">
             <!-- Replace with this page's own hero image, e.g. ./images/project04.png -->
         </div>
 
@@ -39,9 +41,9 @@
         <!-- work-in-progress or detail photos beyond the hero image     -->
         <!-- above. Delete this whole <div> if you don't need it.        -->
         <div class="proj-gallery">
-            <img src="./images/activity01.png">
-            <img src="./images/activity02.png">
-            <img src="./images/activity03.png">
+            <img src="./images/activity01.png" alt="Activity 1 project detail">
+            <img src="./images/activity02.png" alt="Activity 2 project detail">
+            <img src="./images/activity03.png" alt="Activity 3 project detail">
         </div>
 
         <!-- OPTIONAL BLOCK: embedded video (e.g. a YouTube demo of your -->

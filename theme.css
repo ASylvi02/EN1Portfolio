@@ -11,8 +11,8 @@
     /* Brand colors */
     --color-primary: #4a7a6e;       /* deep teal-green: headers, nav, links */
     --color-primary-dark: #35594f;  /* darker teal: hover/active states */
-    --color-accent: #e0a66a;        /* warm orange: cards, highlights */
-    --color-accent-dark: #c98a49;   /* darker orange: hover states */
+    --color-accent: #4b1f5f;        /* dark purple: cards, highlights */
+    --color-accent-dark: #32143f;   /* deeper purple: hover states */
 
     /* Text */
     --color-text: #2d2420;          /* main body text */
@@ -20,12 +20,21 @@
     --color-text-on-dark: #ffffff;  /* text placed over photos/dark overlays */
 
     /* Backgrounds */
+    --color-bg-dark: #000000;       /* black page and navigation backgrounds */
+    --color-pattern-dark: #160a20;  /* dark purple geometric background */
+    --color-pattern-light: #32143f; /* lighter purple pattern shapes */
     --color-bg-page: #f4f4f4;       /* page background on activity/project pages */
     --color-bg-card: #ffffff;       /* white card/container background */
-    --color-bg-overlay: rgba(74, 122, 110, 0.5); /* translucent header/hero overlay */
+    --color-bg-overlay: rgba(0, 0, 0, 0.5);      /* translucent header/hero overlay */
+    --color-border: rgba(200, 160, 220, 0.28);   /* subtle purple borders */
+    --color-border-strong: rgba(200, 160, 220, 0.55); /* focused borders */
+
+    /* Depth */
+    --shadow-card: 0 10px 26px rgba(200, 160, 220, 0.28);
+    --shadow-panel: 0 16px 40px rgba(0, 0, 0, 0.5);
 
     /* Typography */
-    --font-body: Arial, Helvetica, sans-serif;
+    --font-body: "Trebuchet MS", Helvetica, sans-serif;
 
     /* Shape */
     --radius: 10px;
