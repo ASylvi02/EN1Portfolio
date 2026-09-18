@@ -23,6 +23,8 @@
     --color-bg-dark: #000000;       /* black page and navigation backgrounds */
     --color-pattern-dark: #160a20;  /* dark purple geometric background */
     --color-pattern-light: #32143f; /* lighter purple pattern shapes */
+    --color-card-surface: #24102f;  /* restrained project-card surface */
+    --color-card-hover: #3b1b4a;    /* project-card hover surface */
     --color-bg-page: #f4f4f4;       /* page background on activity/project pages */
     --color-bg-card: #ffffff;       /* white card/container background */
     --color-bg-overlay: rgba(0, 0, 0, 0.5);      /* translucent header/hero overlay */
@@ -30,7 +32,7 @@
     --color-border-strong: rgba(200, 160, 220, 0.55); /* focused borders */
 
     /* Depth */
-    --shadow-card: 0 10px 26px rgba(200, 160, 220, 0.28);
+    --shadow-card: 0 10px 26px rgba(0, 0, 0, 0.42);
     --shadow-panel: 0 16px 40px rgba(0, 0, 0, 0.5);
 
     /* Typography */
