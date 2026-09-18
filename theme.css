@@ -9,8 +9,8 @@
 
 :root {
     /* Brand colors */
-    --color-primary: #4a7a6e;       /* deep teal-green: headers, nav, links */
-    --color-primary-dark: #35594f;  /* darker teal: hover/active states */
+    --color-primary: #b889d6;       /* lavender: headers, nav, links */
+    --color-primary-dark: #75458f;  /* deeper lavender: hover/active states */
     --color-accent: #4b1f5f;        /* dark purple: cards, highlights */
     --color-accent-dark: #32143f;   /* deeper purple: hover states */
 
@@ -21,6 +21,7 @@
 
     /* Backgrounds */
     --color-bg-dark: #000000;       /* black page and navigation backgrounds */
+    --color-bg-hero: #0f0814;       /* homepage hero background */
     --color-pattern-dark: #160a20;  /* dark purple geometric background */
     --color-pattern-light: #32143f; /* lighter purple pattern shapes */
     --color-card-surface: #24102f;  /* restrained project-card surface */
@@ -34,6 +35,7 @@
     /* Depth */
     --shadow-card: 0 10px 26px rgba(0, 0, 0, 0.42);
     --shadow-panel: 0 16px 40px rgba(0, 0, 0, 0.5);
+    --shadow-accent: 12px 12px 0 rgba(200, 160, 220, 0.22);
 
     /* Typography */
     --font-body: "Trebuchet MS", Helvetica, sans-serif;
