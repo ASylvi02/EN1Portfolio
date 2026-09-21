@@ -244,6 +244,41 @@ pre code, pre code {
     filter: brightness(1.08) saturate(1.05);
 }
 
+.proj-resource-card,
+.proj-media-placeholder {
+    display: grid;
+    place-items: center;
+    min-height: 180px;
+    margin: 20px 0;
+    padding: 1.25rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    color: var(--color-text-on-dark);
+}
+
+.proj-resource-card h3,
+.proj-media-placeholder p {
+    margin: 0;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.proj-resource-card p,
+.proj-note {
+    margin: 0.75rem 0 0;
+    color: var(--color-text-on-dark);
+    line-height: 1.6;
+}
+
+.proj-note {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
 /* Optional block: an embedded video (e.g. YouTube). The padding-top  */
 /* trick keeps a 16:9 shape at any screen width — do not set a fixed  */
 /* pixel height on the iframe itself.                                  */
@@ -256,6 +291,7 @@ pre code, pre code {
     overflow: hidden;
     border: 1px solid var(--color-border);
     box-shadow: var(--shadow-card);
+    background: rgba(0, 0, 0, 0.24);
 }
 
 .proj-video-container:focus-within {
@@ -269,6 +305,14 @@ pre code, pre code {
     width: 100%;
     height: 100%;
     border: 0;
+}
+
+.proj-media-placeholder {
+    position: absolute;
+    inset: 0;
+    min-height: auto;
+    margin: 0;
+    background: linear-gradient(135deg, rgba(80, 75, 94, 0.8), rgba(32, 28, 38, 0.9));
 }
 
 /* ***************************** */
