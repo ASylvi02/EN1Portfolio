@@ -505,6 +505,31 @@ body {
     filter: brightness(1.08) saturate(1.08);
 }
 
+.project-placeholder {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-top: auto;
+    border: 1px dashed var(--color-border-strong);
+    border-radius: calc(var(--radius) - 4px);
+    background: repeating-linear-gradient(
+        135deg,
+        var(--color-card-surface) 0 12px,
+        var(--color-pattern-dark) 12px 24px
+    );
+    color: var(--color-text-on-dark);
+}
+
+.project-placeholder span {
+    padding: 8px 14px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    background: var(--color-bg-overlay);
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
