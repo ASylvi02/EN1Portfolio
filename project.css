@@ -296,6 +296,11 @@ pre code, pre code {
     filter: brightness(1.08) saturate(1.05);
 }
 
+.proj-gallery .proj-media-placeholder {
+    min-height: 150px;
+    margin: 0;
+}
+
 .proj-resource-card,
 .proj-media-placeholder {
     display: grid;
