@@ -247,27 +247,40 @@ body {
 /* Optional block: a labeled code sample. Delete this block on pages   */
 /* that don't involve code (e.g. a build or design activity).          */
 .proj-code {
-    max-width: 700px;
-    margin: auto;
-}
-
-.proj-code pre:has(code), pre:has(code) {
-    background-color: black;
-    color: white;
-    border-radius: 8px;
-    padding: 4px;
-    border: 1px solid var(--color-border);
+    width: min(100%, 700px);
+    margin: 28px auto 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius);
+    background: rgba(0, 0, 0, 0.2);
     box-shadow: var(--shadow-card);
-    transition: border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.proj-code pre:focus-within {
-    border-color: var(--color-border-strong);
-    box-shadow: 0 12px 30px rgba(200, 160, 220, 0.3);
+.proj-code h3 {
+    margin: 0;
+    padding: 0.7rem 1rem;
+    background: var(--color-accent);
+    color: var(--color-text-on-dark);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
-pre code, pre code {
-    white-space: pre-wrap;
-    word-wrap: break-word;
+
+.proj-code pre {
+    max-width: 100%;
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    overflow-x: auto;
+    background: var(--color-bg-hero);
+    color: var(--color-text-on-dark);
+    line-height: 1.65;
+    tab-size: 4;
+}
+
+.proj-code pre code {
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 0.9rem;
+    white-space: pre;
 }
 
 /* Optional block: a photo gallery grid. Use for pages with several  */

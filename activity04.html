@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Activity 4: Programming with Sensors</title>
+    <link rel="stylesheet" href="./project.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Header and Navigation Section -->
+    <header class="header">
+        <nav class="navbar" aria-label="Project navigation">
+            <a href="./index.html" class="back-link">&larr; Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <!-- Project Information -->
+    <div class="proj-container" id="main-content" tabindex="-1">
+
+        <h1 class='proj-header'>Project Portfolio</h1>
+
+        <h2 class='proj-header'>Activity 4: Programming with Sensors</h2>
+
+        <div class="proj-desc">
+            <p>For this activity, I programmed the color/reflectivity sensor to control an output on the robot. I chose to make the hub's LED screen display the letter T when the sensor's reflectivity reading fell below the low-reflectivity limit of 30.</p>
+        </div>
+
+        <div class="proj-code">
+            <h3>Code:</h3>
+            <pre><code># Setup: Color/Reflectivity Sensor on port D.
+from hub import port, light_matrix
+import runloop
+import color_sensor
+
+# Change this value to set what counts as low reflectivity.
+LOW_REFLECTION_LIMIT = 30
+
+async def main():
+    # Keep checking the sensor while the program runs.
+    while True:
+        # Display T when reflectivity is below the limit.
+        if color_sensor.reflection(port.D) &lt; LOW_REFLECTION_LIMIT:
+            light_matrix.write("T")
+        else:
+            # Clear the screen when reflectivity is not low.
+            light_matrix.clear()
+
+        # Pause briefly before checking again.
+        await runloop.sleep_ms(50)
+
+runloop.run(main())</code></pre>
+        </div>
+
+    </div>
+    <!-- End Project Information -->
+
+    <script src="./project.js" defer></script>
+</body>
+</html>
